@@ -583,6 +583,42 @@
       padding: 28px;
     }
     .photo-viewer.active { display: flex; }
+    .photo-viewer-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(255,255,255,.5);
+      background: rgba(255,255,255,.92);
+      color: var(--black);
+      cursor: pointer;
+      font-size: 2rem;
+      line-height: 1;
+      display: grid;
+      place-items: center;
+      transition: background .2s var(--ease), transform .2s var(--ease), opacity .2s var(--ease);
+    }
+    .photo-viewer-nav:hover {
+      background: var(--white);
+      transform: translateY(-50%) scale(1.04);
+    }
+    .photo-viewer-prev { left: 24px; }
+    .photo-viewer-next { right: 24px; }
+    .photo-viewer-count {
+      position: absolute;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%);
+      z-index: 2;
+      padding: 7px 12px;
+      background: rgba(255,255,255,.92);
+      color: var(--black);
+      font-size: .82rem;
+      letter-spacing: .08em;
+    }
+
     .photo-viewer img {
       width: auto;
       height: auto;
@@ -700,6 +736,16 @@
         display: flex;
       }
       .popup-grid { column-count: 1; }
+      .photo-viewer { padding: 18px; }
+      .photo-viewer .close { top: 14px; right: 14px; }
+      .photo-viewer-nav {
+        width: 42px;
+        height: 42px;
+        font-size: 1.65rem;
+      }
+      .photo-viewer-prev { left: 12px; }
+      .photo-viewer-next { right: 12px; }
+      .photo-viewer-count { bottom: 14px; }
     }
   </style>
 </head>
@@ -898,7 +944,10 @@
 
   <div class="photo-viewer" id="photoViewer" aria-hidden="true">
     <button class="close" id="closePhotoViewer" aria-label="Zavrieť fotku">×</button>
+    <button class="photo-viewer-nav photo-viewer-prev" id="prevPhoto" type="button" aria-label="Predchádzajúca fotka">‹</button>
     <img id="photoViewerImage" src="" alt="Zväčšená fotografia">
+    <button class="photo-viewer-nav photo-viewer-next" id="nextPhoto" type="button" aria-label="Ďalšia fotka">›</button>
+    <div class="photo-viewer-count" id="photoViewerCount" aria-live="polite">1 / 1</div>
   </div>
 
   <script>
@@ -1003,6 +1052,11 @@
     const photoViewer = document.querySelector('#photoViewer');
     const photoViewerImage = document.querySelector('#photoViewerImage');
     const closePhotoViewer = document.querySelector('#closePhotoViewer');
+    const prevPhoto = document.querySelector('#prevPhoto');
+    const nextPhoto = document.querySelector('#nextPhoto');
+    const photoViewerCount = document.querySelector('#photoViewerCount');
+    let currentGalleryImages = [];
+    let currentPhotoIndex = 0;
 
     function fullSizeImage(src) {
       return src.split('?')[0] + '?auto=format&fit=max&w=1800&q=90';
@@ -1013,7 +1067,9 @@
       if (!gallery) return;
       lightboxTitle.textContent = gallery.title;
       lightboxSubtitle.textContent = gallery.subtitle;
-      popupGrid.innerHTML = gallery.images.map((src, i) => `<img src="${src}" data-full="${fullSizeImage(src)}" alt="${gallery.title} ${i + 1}">`).join('');
+      currentGalleryImages = gallery.images.map(fullSizeImage);
+      currentPhotoIndex = 0;
+      popupGrid.innerHTML = gallery.images.map((src, i) => `<img src="${src}" data-index="${i}" data-full="${fullSizeImage(src)}" alt="${gallery.title} ${i + 1}">`).join('');
       lightbox.classList.add('active');
       lightbox.setAttribute('aria-hidden', 'false');
       document.body.classList.add('no-scroll');
@@ -1026,11 +1082,24 @@
       document.body.classList.remove('no-scroll');
     }
 
-    function openFullPhoto(src) {
-      photoViewerImage.src = src;
+    function updatePhotoViewer() {
+      if (!currentGalleryImages.length) return;
+      photoViewerImage.src = currentGalleryImages[currentPhotoIndex];
+      photoViewerCount.textContent = `${currentPhotoIndex + 1} / ${currentGalleryImages.length}`;
+    }
+
+    function openFullPhoto(index = 0) {
+      currentPhotoIndex = Number(index) || 0;
+      updatePhotoViewer();
       photoViewer.classList.add('active');
       photoViewer.setAttribute('aria-hidden', 'false');
       document.body.classList.add('no-scroll');
+    }
+
+    function showPhoto(direction) {
+      if (!currentGalleryImages.length) return;
+      currentPhotoIndex = (currentPhotoIndex + direction + currentGalleryImages.length) % currentGalleryImages.length;
+      updatePhotoViewer();
     }
 
     function closeFullPhoto() {
@@ -1046,14 +1115,21 @@
     popupGrid.addEventListener('click', e => {
       const image = e.target.closest('img');
       if (!image) return;
-      openFullPhoto(image.dataset.full || image.src);
+      openFullPhoto(image.dataset.index);
     });
     closePhotoViewer.addEventListener('click', closeFullPhoto);
+    prevPhoto.addEventListener('click', e => { e.stopPropagation(); showPhoto(-1); });
+    nextPhoto.addEventListener('click', e => { e.stopPropagation(); showPhoto(1); });
     photoViewer.addEventListener('click', e => { if (e.target === photoViewer) closeFullPhoto(); });
     lightbox.addEventListener('click', e => { if (e.target === lightbox) closeGallery(); });
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && photoViewer.classList.contains('active')) closeFullPhoto();
-      else if (e.key === 'Escape') closeGallery();
+      if (photoViewer.classList.contains('active')) {
+        if (e.key === 'Escape') closeFullPhoto();
+        if (e.key === 'ArrowLeft') showPhoto(-1);
+        if (e.key === 'ArrowRight') showPhoto(1);
+        return;
+      }
+      if (e.key === 'Escape') closeGallery();
     });
   </script>
 </body>
