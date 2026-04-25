@@ -77,31 +77,55 @@
     .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
 
     header {
-      position: fixed;
-      inset: 0 0 auto 0;
-      z-index: 100;
-      background: transparent;
-      color: var(--white);
-      -webkit-backdrop-filter: blur(0);
-      backdrop-filter: blur(0);
-      border-bottom: 1px solid transparent;
-      transition: background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease), backdrop-filter .25s var(--ease);
-    }
+  
+  
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  padding: 8px 0;
+  color: white;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.42),
+    rgba(0,0,0,0.18),
+    rgba(0,0,0,0)
+  );
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  transition: background .3s ease, backdrop-filter .3s ease, box-shadow .3s ease;
+}
+
+header.scrolled {
+  
+  background: rgba(255,255,255,0.85);
+  color: black;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+}
+
+
 
     header.scrolled {
-      background: rgba(255,255,255,.92);
+  
+      background: rgba(255,255,255,.78);
       color: var(--black);
-      -webkit-backdrop-filter: blur(14px);
-      backdrop-filter: blur(14px);
-      border-bottom-color: var(--gray-200);
+      -webkit-
+      
+      border-bottom-color: rgba(0,0,0,.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,.07);
     }
 
     header.menu-open {
+  
       color: var(--black);
     }
 
     .nav {
-      height: 76px;
+      height: 62px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -204,7 +228,7 @@
       color: var(--gray-500);
       font-size: .74rem;
       font-weight: 500;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       padding-left: 0;
       margin-left: 5px;
     }
@@ -308,7 +332,7 @@ h3 { font-size: 1.45rem; line-height: 1.12; }
 
     .hero-copy .label {
       color: rgba(255,255,255,.72);
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
     .hero-copy h1 {
@@ -339,8 +363,8 @@ h3 { font-size: 1.45rem; line-height: 1.12; }
       border-color: rgba(255,255,255,.84);
       background: rgba(255,255,255,.1);
       color: var(--white);
-      -webkit-backdrop-filter: blur(12px);
-      backdrop-filter: blur(12px);
+      -webkit-
+      
     }
 
     .hero .btn:hover {
@@ -390,7 +414,7 @@ h3 { font-size: 1.45rem; line-height: 1.12; }
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.08);
+      background: rgba(0,0,0,0.05);
       opacity: 0;
       transition: opacity .2s var(--ease);
     }
@@ -454,20 +478,33 @@ h3 { font-size: 1.45rem; line-height: 1.12; }
       object-fit: cover;
       object-position: center;
       transition: transform .35s var(--ease), opacity .35s var(--ease);
+    
+      position: relative;
+      z-index: 0;
     }
-    .gallery-card::after {
+        .gallery-card::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,.45), transparent 55%);
-      opacity: .85;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,.54) 0%,
+        rgba(0,0,0,.28) 42%,
+        rgba(0,0,0,0) 76%
+      );
+      opacity: 1;
+      pointer-events: none;
+    
+      z-index: 1;
     }
-    .gallery-card:hover { transform: translateY(-4px); }
-    .gallery-card:hover img { transform: scale(1.06); }
+
+    
+    
+
     .gallery-label {
       position: absolute;
       left: 18px;
-      bottom: 18px;
+      bottom: 14px;
       z-index: 1;
       color: #fff;
       font-size: 1.2rem;
@@ -478,11 +515,12 @@ h3 { font-size: 1.45rem; line-height: 1.12; }
       position: absolute;
       left: 18px;
       right: 18px;
-      bottom: 18px;
+      bottom: 14px;
       z-index: 1;
       color: #fff;
       display: grid;
       gap: 4px;
+      text-shadow: none;
     }
 
     .gallery-meta .gallery-label {
@@ -497,7 +535,7 @@ h3 { font-size: 1.45rem; line-height: 1.12; }
       font-size: .78rem;
       letter-spacing: .08em;
       text-transform: uppercase;
-      color: rgba(255,255,255,.78);
+      color: rgba(255,255,255,.88);
     }
 
 
@@ -581,7 +619,7 @@ h3 { font-size: 1.45rem; line-height: 1.12; }
     input, textarea, select {
       width: 100%;
       border: 0;
-      border-bottom: 1px solid var(--gray-200);
+      
       background: transparent;
       color: var(--black);
       padding: 13px 0;
@@ -671,6 +709,8 @@ h3 { font-size: 1.45rem; line-height: 1.12; }
     .footer-center a:hover::after { transform: scaleX(1); }
 
 
+            
+
     .category-grid .gallery-card {
       min-height: 260px;
     }
@@ -700,33 +740,43 @@ h3 { font-size: 1.45rem; line-height: 1.12; }
       object-fit: cover;
       object-position: center;
       transition: transform .35s var(--ease), opacity .35s var(--ease);
+    
+      position: relative;
+      z-index: 0;
     }
 
-    .story-card::after {
+        .story-card::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,.52), transparent 58%);
-      opacity: .95;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,.54) 0%,
+        rgba(0,0,0,.28) 42%,
+        rgba(0,0,0,0) 76%
+      );
+      opacity: 1;
+      pointer-events: none;
+    
+      z-index: 1;
     }
 
-    .story-card:hover {
-      transform: translateY(-4px);
-    }
+    
 
-    .story-card:hover img {
-      transform: scale(1.055);
-    }
+    
+
+
 
     .story-meta {
       position: absolute;
       left: 18px;
       right: 18px;
-      bottom: 18px;
+      bottom: 14px;
       z-index: 1;
       color: #fff;
       display: grid;
       gap: 5px;
+      text-shadow: none;
     }
 
     .story-title {
@@ -739,7 +789,7 @@ h3 { font-size: 1.45rem; line-height: 1.12; }
       font-size: .78rem;
       letter-spacing: .08em;
       text-transform: uppercase;
-      color: rgba(255,255,255,.78);
+      color: rgba(255,255,255,.88);
     }
 
     .gallery-back {
@@ -773,14 +823,29 @@ h3 { font-size: 1.45rem; line-height: 1.12; }
       display: none;
     }
 
+
+    .gallery-card,
+    .story-card {
+      transition: transform .25s var(--ease);
+    }
+
+    .gallery-card img,
+    .story-card img {
+      transition: transform .35s var(--ease), opacity .35s var(--ease);
+    }
+
+    
+
+    
+
     .lightbox {
       position: fixed;
       inset: 0;
       z-index: 999;
       display: none;
       background: rgba(255,255,255,.96);
-      -webkit-backdrop-filter: blur(16px);
-      backdrop-filter: blur(16px);
+      -webkit-
+      
       overflow-y: auto;
       padding: 30px 0 70px;
     }
@@ -792,7 +857,7 @@ h3 { font-size: 1.45rem; line-height: 1.12; }
       gap: 24px;
       padding-bottom: 34px;
       margin-bottom: 26px;
-      border-bottom: 1px solid var(--gray-200);
+      
     }
     .lightbox-head h3 {
       font-size: clamp(2.6rem, 6vw, 6rem);
@@ -930,6 +995,13 @@ z-index: 2;
         pointer-events: auto;
       }
 
+      header.menu-open {
+  
+        background: var(--white);
+        color: var(--black);
+        box-shadow: 0 6px 20px rgba(0,0,0,.07);
+      }
+
       header.menu-open .menu-toggle {
         color: var(--black);
       }
@@ -960,7 +1032,7 @@ z-index: 2;
       .nav > .socials { display: none; }
 
       .hero {
-        padding: 112px 0 64px;
+        padding: 100px 0 64px;
         background-position: center;
       }
       .hero-layout {
@@ -988,7 +1060,7 @@ z-index: 2;
 
       .hero {
         min-height: 100svh;
-        padding: 106px 0 56px;
+        padding: 94px 0 56px;
         background:
           linear-gradient(180deg, rgba(0,0,0,.66) 0%, rgba(0,0,0,.48) 44%, rgba(0,0,0,.62) 100%),
           url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=88') center/cover no-repeat;
@@ -1086,7 +1158,89 @@ z-index: 2;
       .photo-viewer-next { right: 12px; }
       .photo-viewer-count { bottom: 14px; }
     }
-  </style>
+  
+    
+
+
+    /* Blur strip at bottom of gallery cards */
+                        .gallery-card::before,
+    .story-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 20%;
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.25),
+        rgba(0,0,0,0)
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    
+        .gallery-card:hover::before,
+    .story-card:hover::before {
+      background: linear-gradient(
+        to top,
+        rgba(0,0,0,.40) 0%,
+        rgba(0,0,0,.25) 62%,
+        rgba(0,0,0,0) 100%
+      );
+      border-top-color: rgba(255,255,255,.42);
+    }
+
+            .gallery-meta,
+    .story-meta {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 14px;
+      z-index: 3;
+      color: #fff;
+    }
+
+
+    .gallery-card img,
+    .story-card img {
+      transition: transform .35s ease;
+    }
+
+    .gallery-card:hover img,
+    .story-card:hover img {
+      transform: scale(1.05);
+    }
+
+
+header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,0.12),
+    transparent
+  );
+  pointer-events: none;
+}
+
+header.scrolled::after {
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0,0,0,0.15),
+    transparent
+  );
+}
+
+</style>
 </head>
 <body>
   <header>
