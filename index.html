@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bebo Raw Portfolio | Váš fotograf</title>
+  <meta name="description" content="Bebo Raw – fotograf pre svadby, portréty, eventy a koncerty. Prirodzená reportážna fotografia s dôrazom na atmosféru, emócie a skutočné momenty." />
+  <meta name="keywords" content="Bebo Raw, fotograf, svadobný fotograf, portrétny fotograf, eventový fotograf, koncertný fotograf, svadby, portréty, eventy, koncerty, fotografia Slovensko" />
+  <meta name="author" content="Bebo Raw" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="canonical" href="https://beboraw.sk/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Bebo Raw Portfolio | Váš fotograf" />
+  <meta property="og:description" content="Fotograf pre svadby, portréty, eventy a koncerty. Prirodzené momenty, atmosféra a príbehy zachytené bez zbytočných póz." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85" />
+  <meta property="og:url" content="https://beboraw.sk/" />
+  <meta property="og:site_name" content="Bebo Raw" />
+  <meta property="og:locale" content="sk_SK" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bebo Raw Portfolio | Váš fotograf" />
+  <meta name="twitter:description" content="Prirodzená fotografia svadieb, portrétov, eventov a koncertov s dôrazom na atmosféru a skutočné momenty." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Photographer",
+    "name": "Bebo Raw",
+    "url": "https://beboraw.sk/",
+    "description": "Fotograf pre svadby, portréty, eventy a koncerty so zameraním na prirodzenú reportážnu fotografiu.",
+    "email": "dominikbebko1@gmail.com",
+    "telephone": "+421949234678",
+    "sameAs": [
+      "https://instagram.com/bebo__raw"
+    ],
+    "areaServed": "Slovensko",
+    "serviceType": ["Svadobná fotografia", "Portrétna fotografia", "Eventová fotografia", "Koncertná fotografia"]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --white: #ffffff;
+      --black: #111111;
+      --gray-100: #f6f6f6;
+      --gray-200: #eeeeee;
+      --gray-500: #777777;
+      --gray-700: #3d3d3d;
+      --max: 1160px;
+      --ease: cubic-bezier(.22,.61,.36,1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    body.no-scroll { overflow: hidden; }
+    img { width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea, select { font: inherit; }
+
+    .container { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+    header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      background: rgba(255,255,255,.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      font-family: 'Outfit', Inter, sans-serif;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: .95rem;
+      line-height: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .brand span {
+      display: block;
+      font-size: .78rem;
+      letter-spacing: .32em;
+      font-weight: 400;
+      margin-left: 6px; /* subtle asymmetry */
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+      color: var(--gray-700);
+      font-size: .92rem;
+    }
+
+    .nav-links a, .socials a { transition: opacity .2s var(--ease), transform .2s var(--ease); }
+
+    .nav-links a {
+      position: relative;
+      display: inline-block;
+      padding: 6px 0;
+      letter-spacing: .03em;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1px;
+      background: var(--black);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .25s var(--ease);
+    }
+
+    .nav-links a:hover {
+      opacity: .6;
+      transform: translateY(-1px);
+    }
+
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    .socials { display: flex; align-items: center; gap: 14px; }
+    .socials a { display: grid; place-items: center; color: var(--black); }
+    .socials a:hover { opacity: .55; transform: translateY(-1px); }
+    .socials svg { width: 18px; height: 18px; }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 0;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--black);
+      padding: 0;
+      width: auto;
+    }
+
+    section { padding: 56px 0; }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: .8fr 1fr;
+      gap: 36px;
+      align-items: start;
+      margin-bottom: 34px;
+    }
+
+    .label {
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      color: var(--gray-500);
+      font-size: .74rem;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    h1, h2, h3 { font-weight: 500; letter-spacing: 0.01em; }
+    h1 {
+      font-size: clamp(2.4rem, 5.2vw, 5rem);
+      line-height: 1.14;
+      letter-spacing: 0.018em;
+      word-spacing: 0.035em;
+      max-width: 720px;
+    }
+    h2 {
+      font-size: clamp(2.4rem, 5.2vw, 5rem);
+      line-height: 1.12;
+      letter-spacing: 0.015em;
+      word-spacing: 0.04em;
+    }
+    h3 { font-size: 1.45rem; line-height: 1.12; }
+    p { color: var(--gray-700); font-weight: 300; }
+
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      padding: 104px 0 56px;
+      background: var(--white);
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(340px, .75fr);
+      gap: clamp(34px, 6vw, 72px);
+      align-items: center;
+    }
+
+    .hero-copy p {
+      max-width: 610px;
+      font-size: 1.08rem;
+      margin-top: 20px;
+    }
+
+    .hero-side {
+      max-width: 420px;
+      margin-top: 22px;
+      color: var(--gray-500);
+      font-size: .95rem;
+    }
+
+    .hero-media {
+      aspect-ratio: 4 / 5;
+      background: var(--gray-100);
+      overflow: hidden;
+    }
+
+    .hero-media > img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      transition: transform .45s var(--ease), opacity .45s var(--ease);
+    }
+
+    .hero-media:hover > img { transform: scale(1.025); opacity: .96; }
+    .hero-media .small { display: none; }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .btn {
+      position: relative;
+      overflow: hidden;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: auto;
+      min-height: 46px;
+      padding: 0 20px;
+      border: 1px solid var(--black);
+      background: var(--white);
+      color: var(--black);
+      cursor: pointer;
+      font-size: .86rem;
+      font-weight: 500;
+      transition: background .22s var(--ease), color .22s var(--ease), transform .22s var(--ease);
+    }
+    .btn:hover { background: var(--black); color: var(--white); transform: translateY(-2px); }
+    .btn::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.08);
+      opacity: 0;
+      transition: opacity .2s var(--ease);
+    }
+    .btn:hover::after { opacity: 1; }
+    .btn-dark { background: var(--black); color: var(--white); }
+    .btn-dark:hover { background: var(--white); color: var(--black); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .78fr 1.22fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .about-image {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--gray-100);
+    }
+
+    .about-image img {
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      background: var(--gray-100);
+      max-height: 520px;
+      transition: transform .45s var(--ease), opacity .45s var(--ease);
+    }
+
+    .about-image:hover img { transform: scale(1.025); opacity: .96; }
+
+    .about-text { max-width: 720px; padding-top: 0; }
+    .about-text p { margin-top: 20px; font-size: 1.02rem; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .gallery-card {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--gray-100);
+      border: 0;
+      padding: 0;
+      color: inherit;
+      text-align: left;
+      width: 100%;
+      max-height: 420px;
+      transition: transform .25s var(--ease);
+    }
+    .gallery-card img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform .35s var(--ease), opacity .35s var(--ease);
+    }
+    .gallery-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.45), transparent 55%);
+      opacity: .85;
+    }
+    .gallery-card:hover { transform: translateY(-4px); }
+    .gallery-card:hover img { transform: scale(1.06); }
+    .gallery-label {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      z-index: 1;
+      color: #fff;
+      font-size: 1.2rem;
+      letter-spacing: -.02em;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 34px;
+    }
+
+    .service {
+      display: grid;
+      gap: 18px;
+      padding-top: 26px;
+      border-top: 1px solid var(--gray-200);
+    }
+    .service .num { color: var(--gray-500); font-size: .86rem; }
+    .service p { max-width: 340px; }
+
+    .pricing {
+      margin-top: 46px;
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 40px;
+      align-items: start;
+      background: var(--gray-100);
+      padding: clamp(24px, 4vw, 42px);
+    }
+    .pricing h3 {
+      font-size: clamp(1.8rem, 3.2vw, 3rem);
+      line-height: 1.2;
+      max-width: 420px;
+    }
+    .pricing p { font-size: 1.06rem; max-width: 640px; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 54px;
+      align-items: start;
+      max-width: 100%;
+    }
+    .contact-items {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+    .contact-item {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      width: fit-content;
+      color: var(--gray-700);
+      transition: opacity .2s var(--ease), transform .2s var(--ease);
+    }
+    .contact-item svg { width: 18px; height: 18px; flex: 0 0 auto; }
+    .contact-item:hover { opacity: .6; transform: translateY(-1px); }
+    .contact-item::after {
+      content: "";
+      position: absolute;
+      left: 32px;
+      bottom: -4px;
+      width: calc(100% - 32px);
+      height: 1px;
+      background: var(--black);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .25s var(--ease);
+    }
+    .contact-item:hover::after { transform: scaleX(1); }
+
+    form {
+      display: grid;
+      gap: 22px;
+      width: 100%;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    label { display: grid; gap: 8px; color: var(--gray-500); font-size: .84rem; }
+    input, textarea, select {
+      width: 100%;
+      border: 0;
+      border-bottom: 1px solid var(--gray-200);
+      background: transparent;
+      color: var(--black);
+      padding: 13px 0;
+      outline: none;
+    }
+    textarea { min-height: 132px; resize: vertical; }
+    input:focus, textarea:focus, select:focus { border-color: var(--black); }
+
+    .select-wrap { position: relative; display: block; }
+    .select-wrap select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      padding: 13px 36px 13px 12px;
+      cursor: pointer;
+    }
+    .select-wrap::after {
+      content: "";
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      width: 12px;
+      height: 12px;
+      transform: translateY(-50%);
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>') no-repeat center;
+      pointer-events: none;
+      opacity: .7;
+    }
+    .select-wrap:hover::after { opacity: 1; }
+
+    footer {
+      padding: 48px 0 36px;
+      border-top: 1px solid var(--gray-200);
+      color: var(--gray-500);
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+    .footer-center {
+      flex: 1;
+      text-align: center;
+      font-size: .72rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+    }
+
+    .footer-center a {
+      position: relative;
+      display: inline-block;
+      transition: opacity .2s var(--ease), transform .2s var(--ease);
+    }
+
+    .footer-center a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 1px;
+      background: var(--black);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .25s var(--ease);
+    }
+
+    .footer-center a:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+    }
+
+    .footer-center a:hover::after { transform: scaleX(1); }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      display: none;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(16px);
+      overflow-y: auto;
+      padding: 30px 0 70px;
+    }
+    .lightbox.active { display: block; }
+    .lightbox-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 24px;
+      padding-bottom: 34px;
+      margin-bottom: 26px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .lightbox-head h3 {
+      font-size: clamp(2.6rem, 6vw, 6rem);
+      line-height: 1.08;
+    }
+    .lightbox-head p { margin-top: 14px; }
+    .close {
+      flex: 0 0 auto;
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--black);
+      background: var(--white);
+      color: var(--black);
+      cursor: pointer;
+      font-size: 1.4rem;
+      transition: background .2s var(--ease), color .2s var(--ease);
+    }
+    .close:hover { background: var(--black); color: var(--white); }
+    .popup-grid {
+      column-count: 4;
+      column-gap: 18px;
+    }
+    .popup-grid img {
+      width: 100%;
+      height: auto;
+      margin: 0 0 18px;
+      break-inside: avoid;
+      display: block;
+      background: var(--gray-100);
+      cursor: zoom-in;
+      transition: opacity .22s var(--ease), transform .22s var(--ease);
+    }
+    .popup-grid img:hover { transform: translateY(-4px) scale(0.99); opacity: .92; }
+
+    .photo-viewer {
+      position: fixed;
+      inset: 0;
+      z-index: 1200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,.88);
+      padding: 28px;
+    }
+    .photo-viewer.active { display: flex; }
+    .photo-viewer img {
+      width: auto;
+      height: auto;
+      max-width: min(1400px, 96vw);
+      max-height: 92vh;
+      object-fit: contain;
+      box-shadow: 0 24px 80px rgba(0,0,0,.35);
+    }
+    .photo-viewer .close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: rgba(255,255,255,.94);
+    }
+
+    @media (max-width: 960px) {
+      .menu-toggle {
+        display: block;
+        position: relative;
+        z-index: 1001;
+      }
+
+      .nav-links {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        height: 100svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        background: var(--white);
+        color: var(--black);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: none;
+        transition: opacity .25s var(--ease), visibility .25s var(--ease);
+        z-index: 1000;
+      }
+
+      .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+
+      .nav-links li {
+        opacity: 0;
+        transform: translateY(14px);
+        transition: opacity .28s var(--ease), transform .28s var(--ease);
+      }
+
+      .nav-links.active li {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .nav-links.active li:nth-child(1) { transition-delay: .05s; }
+      .nav-links.active li:nth-child(2) { transition-delay: .09s; }
+      .nav-links.active li:nth-child(3) { transition-delay: .13s; }
+      .nav-links.active li:nth-child(4) { transition-delay: .17s; }
+
+      .nav-links li a {
+        font-size: clamp(2rem, 9vw, 4rem);
+        line-height: 1;
+        letter-spacing: .02em;
+        color: var(--black);
+      }
+
+      .nav > .socials { display: none; }
+
+      .hero { padding: 96px 0 54px; }
+      .hero-layout {
+        grid-template-columns: 1fr .82fr;
+        gap: 34px;
+      }
+      h1 { font-size: clamp(2.4rem, 5.2vw, 5rem); }
+      .section-head, .pricing, .contact-grid { grid-template-columns: 1fr; }
+
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: 1fr; }
+      .popup-grid { column-count: 3; }
+    }
+
+    @media (max-width: 720px) {
+      .container { width: min(100% - 28px, var(--max)); }
+      section { padding: 48px 0; }
+      .hero { padding: 96px 0 46px; }
+      .hero-layout { grid-template-columns: 1fr; gap: 30px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-text { order: 1; }
+      .about-image { order: 2; }
+      .hero-media { aspect-ratio: 4 / 3; }
+      h1 {
+        font-size: clamp(2.4rem, 5.2vw, 5rem);
+        line-height: 1.12;
+      }
+      .hero-copy p { font-size: .98rem; }
+      .hero-side { display: none; }
+      .form-row { grid-template-columns: 1fr; }
+      .gallery-card { aspect-ratio: 4 / 5; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .popup-grid { column-count: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#">BEBO<span>RAW</span></a>
+      <button class="menu-toggle" aria-label="Otvoriť menu">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#o-mne">O mne</a></li>
+        <li><a href="#galeria">Galéria</a></li>
+        <li><a href="#sluzby">Služby</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+      <div class="socials" aria-label="Sociálne siete a kontakt">
+        <a href="https://instagram.com/bebo__raw" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+        
+        <a href="mailto:dominikbebko1@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+        <a href="tel:+421949234678" aria-label="Telefón"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 11.2 19a19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.1a2 2 0 0 1 2.1-.5c.9.3 1.7.5 2.6.6A2 2 0 0 1 22 16.9z"/></svg></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-layout">
+          <div class="hero-copy">
+          <div class="label">Svadby / portréty / eventy / koncerty</div>
+            <h1>Nie pózy, ale skutočné momenty.</h1>
+            <p>Fotím skôr pocit než obraz. Nesnažím sa ľudí aranžovať — nechávam veci plynúť a hľadám momenty, ktoré majú význam samy o sebe.</p>
+            <div class="actions">
+              <a class="btn btn-dark" href="#kontakt">Rezervovať termín</a>
+              <a class="btn" href="#galeria">Pozrieť galériu</a>
+            </div>
+          <p class="hero-side">Farby, kontrast a prirodzené svetlo. Dôraz na momenty, ktoré sa nedajú zopakovať.</p>
+          </div>
+
+          <div class="hero-media">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=85" alt="Svadobný moment">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="o-mne">
+      <div class="container about-grid">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1000&q=85" alt="Fotograf pri práci">
+        </div>
+        <div class="about-text">
+          <div class="label">O mne</div>
+          <h2>Menej póz. Viac atmosféry.</h2>
+          <p>Som skôr tichý pozorovateľ než režisér. Snažím sa vnímať ľudí, situáciu a to, čo sa deje medzi riadkami — nie len to, čo je viditeľné.</p>
+          <p>Pri svadbách sa nesnažím riadiť deň, ale byť jeho súčasťou. Byť blízko, ale nenápadne. Často som skôr kamarát, ďalší svedok, niekto, kto to s vami prežíva.</p>
+          <p>Verím v príbehy. V drobné momenty, ktoré sa nedajú zopakovať. Fotografia pre mňa nie je o pózach, ale o pocite, ktorý si z toho dňa odnesiete.</p>
+          <p>Ak chceš vidieť viac z môjho pohľadu, nájdeš to aj na Instagrame (@bebo__raw), kde zdieľam veci tak, ako ich cítim — s dôrazom na farby, kontrast a pocit, ktorý z toho vzniká.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="label">Galéria</div>
+            <h2>Príbehy</h2>
+          </div>
+          <p>Galéria je rozdelená podľa nálady a typu fotenia. Kliknutím otvoríte popup s výberom 12 fotografií z kategórie.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <button class="gallery-card" data-gallery="wedding" type="button">
+            <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=max&w=1100&q=85" alt="Svadby">
+            <span class="gallery-label">Svadby</span>
+          </button>
+          <button class="gallery-card" data-gallery="portrait" type="button">
+            <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=max&w=1100&q=85" alt="Portréty">
+            <span class="gallery-label">Portréty</span>
+          </button>
+          <button class="gallery-card" data-gallery="event" type="button">
+            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=max&w=1100&q=85" alt="Eventy">
+            <span class="gallery-label">Eventy</span>
+          </button>
+          <button class="gallery-card" data-gallery="concert" type="button">
+            <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=max&w=1100&q=85" alt="Koncerty">
+            <span class="gallery-label">Koncerty</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="sluzby">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="label">Služby</div>
+            <h2>Čo fotím</h2>
+          </div>
+          <p>Balíčky sa dajú upraviť podľa rozsahu, termínu, lokality a toho, aký príbeh chcete zachytiť. Okrem svadieb, portrétov a eventov fotím aj oslavy a rôzne menšie podujatia. Som otvorený aj iným typom fotenia — ak to dáva zmysel a cítim, že to zvládnem, rád sa do toho pustím.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service"><span class="num">01</span><h3>Svadby</h3><p>Od príprav až po večernú atmosféru. Dôraz na emócie, prirodzenosť a ucelený príbeh dňa.</p></article>
+          <article class="service"><span class="num">02</span><h3>Portréty</h3><p>Individuálne, párové a rodinné fotenie bez kŕčovitých póz — väčšinou vonku, na mieste, ktoré má atmosféru a prirodzene ladí s vami.</p></article>
+          <article class="service"><span class="num">03</span><h3>Eventy</h3><p>Firemné a spoločenské udalosti zachytené reportážne, čisto a použiteľne pre web aj sociálne siete.</p></article>
+        </div>
+
+        <div class="pricing">
+          <h3>Cena podľa príbehu</h3>
+          <p>Každé fotenie je iné, preto cenu prispôsobujem vašim požiadavkám, rozsahu, lokalite a výstupom. Napíšte mi základnú predstavu a pripravím vám individuálnu ponuku.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="container contact-grid">
+        <div>
+          <div class="label">Kontakt</div>
+          <h2>Napíšme si o vašom termíne.</h2>
+          <div class="contact-items">
+            <a class="contact-item" href="mailto:dominikbebko1@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              <span>dominikbebko1@gmail.com</span>
+            </a>
+            <a class="contact-item" href="tel:+421949234678">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 11.2 19a19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.1a2 2 0 0 1 2.1-.5c.9.3 1.7.5 2.6.6A2 2 0 0 1 22 16.9z"/></svg>
+              <span>+421 949 234 678</span>
+            </a>
+          </div>
+          <p style="margin-top:18px; max-width:640px; color:var(--gray-500); font-size:.95rem;">
+            Ak máte predstavu alebo termín, pokojne mi napíšte alebo zavolajte. Odpoviem vám čo najskôr a môžeme to spolu doladiť podľa toho, čo hľadáte.
+          </p>
+        </div>
+
+        <form action="https://formspree.io/f/XXXXXXXX" method="POST">
+          <div class="form-row">
+            <label>Meno<input name="name" type="text" required placeholder="Vaše meno"></label>
+            <label>Email<input name="email" type="email" required placeholder="vas@email.sk"></label>
+          </div>
+          <div class="form-row">
+            <label>Telefón<input name="phone" type="tel" placeholder="+421..."></label>
+            <label>Typ fotenia
+              <span class="select-wrap">
+              <select name="type" required><option value="">Vyberte</option><option>Svadba</option><option>Portrét</option><option>Rodina</option><option>Event</option><option>Iné</option></select>
+              </span>
+            </label>
+          </div>
+          <label>Správa<textarea name="message" required placeholder="Termín, miesto, predstava, rozsah..."></textarea></label>
+          <button class="btn btn-dark" type="submit">Odoslať správu</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="brand" style="gap:4px;">
+        BEBO
+        <span>RAW</span>
+      </div>
+
+      <div class="footer-center">
+        © <span id="year"></span>
+        <span style="margin:0 8px; opacity:.4;">/</span>
+        <a href="#gdpr" style="opacity:.7;">OCHRANA GDPR</a>
+      </div>
+
+      <div class="socials" aria-label="Sociálne siete a kontakt">
+        <a href="https://instagram.com/bebo__raw" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+        <a href="mailto:dominikbebko1@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        </a>
+        <a href="tel:+421949234678" aria-label="Telefón">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19.8 19.8 0 0 1 11.2 19a19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.1a2 2 0 0 1 2.1-.5c.9.3 1.7.5 2.6.6A2 2 0 0 1 22 16.9z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="container">
+      <div class="lightbox-head">
+        <div>
+          <div class="label">Výber fotografií</div>
+          <h3 id="lightboxTitle">Galéria</h3>
+          <p id="lightboxSubtitle">12 fotografií z kategórie</p>
+        </div>
+        <button class="close" id="closeLightbox" aria-label="Zavrieť">×</button>
+      </div>
+      <div class="popup-grid" id="popupGrid"></div>
+    </div>
+  </div>
+
+  <div class="photo-viewer" id="photoViewer" aria-hidden="true">
+    <button class="close" id="closePhotoViewer" aria-label="Zavrieť fotku">×</button>
+    <img id="photoViewerImage" src="" alt="Zväčšená fotografia">
+  </div>
+
+  <script>
+    const navLinks = document.querySelector('#navLinks');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const year = document.querySelector('#year');
+    year.textContent = new Date().getFullYear();
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      document.body.classList.toggle('no-scroll');
+      menuToggle.textContent = navLinks.classList.contains('active') ? '×' : '☰';
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+        menuToggle.textContent = '☰';
+      });
+    });
+
+    const galleries = {
+      wedding: {
+        title: 'Svadobný deň',
+        subtitle: 'Emócie, svetlo a detaily jedného dňa.',
+        images: [
+          'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1529634597503-139d3726fed5?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1509610973147-232dfea52a97?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1525258946800-98cfd641d0de?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1525772764200-be829a350797?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=max&w=1100&q=85'
+        ]
+      },
+      portrait: {
+        title: 'Portréty',
+        subtitle: 'Prirodzenosť, charakter a pokojná atmosféra.',
+        images: [
+          'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1521119989659-a83eee488004?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=max&w=1100&q=85'
+        ]
+      },
+      event: {
+        title: 'Eventy',
+        subtitle: 'Reportážne zachytenie atmosféry podujatia.',
+        images: [
+          'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1515169067865-5387ec356754?auto=format&fit=max&w=1100&q=85'
+        ]
+      },
+      concert: {
+        title: 'Koncerty',
+        subtitle: 'Svetlá, energia a atmosféra živých vystúpení.',
+        images: [
+          'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1501612780327-45045538702b?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1487180144351-b8472da7d491?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=max&w=1100&q=85',
+          'https://images.unsplash.com/photo-1507901747481-84a4f64fda6d?auto=format&fit=max&w=1100&q=85'
+        ]
+      }
+    };
+
+    const lightbox = document.querySelector('#lightbox');
+    const popupGrid = document.querySelector('#popupGrid');
+    const lightboxTitle = document.querySelector('#lightboxTitle');
+    const lightboxSubtitle = document.querySelector('#lightboxSubtitle');
+    const closeLightbox = document.querySelector('#closeLightbox');
+    const photoViewer = document.querySelector('#photoViewer');
+    const photoViewerImage = document.querySelector('#photoViewerImage');
+    const closePhotoViewer = document.querySelector('#closePhotoViewer');
+
+    function fullSizeImage(src) {
+      return src.split('?')[0] + '?auto=format&fit=max&w=1800&q=90';
+    }
+
+    function openGallery(key) {
+      const gallery = galleries[key];
+      if (!gallery) return;
+      lightboxTitle.textContent = gallery.title;
+      lightboxSubtitle.textContent = gallery.subtitle;
+      popupGrid.innerHTML = gallery.images.map((src, i) => `<img src="${src}" data-full="${fullSizeImage(src)}" alt="${gallery.title} ${i + 1}">`).join('');
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('no-scroll');
+    }
+
+    function closeGallery() {
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      closeFullPhoto();
+      document.body.classList.remove('no-scroll');
+    }
+
+    function openFullPhoto(src) {
+      photoViewerImage.src = src;
+      photoViewer.classList.add('active');
+      photoViewer.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('no-scroll');
+    }
+
+    function closeFullPhoto() {
+      photoViewer.classList.remove('active');
+      photoViewer.setAttribute('aria-hidden', 'true');
+      photoViewerImage.src = '';
+    }
+
+    document.querySelectorAll('[data-gallery]').forEach(item => {
+      item.addEventListener('click', () => openGallery(item.dataset.gallery));
+    });
+    closeLightbox.addEventListener('click', closeGallery);
+    popupGrid.addEventListener('click', e => {
+      const image = e.target.closest('img');
+      if (!image) return;
+      openFullPhoto(image.dataset.full || image.src);
+    });
+    closePhotoViewer.addEventListener('click', closeFullPhoto);
+    photoViewer.addEventListener('click', e => { if (e.target === photoViewer) closeFullPhoto(); });
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeGallery(); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && photoViewer.classList.contains('active')) closeFullPhoto();
+      else if (e.key === 'Escape') closeGallery();
+    });
+  </script>
+</body>
+</html>
