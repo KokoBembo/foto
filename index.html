@@ -474,6 +474,33 @@ h3 { font-size: 1.45rem; line-height: 1.12; }
       letter-spacing: -.02em;
     }
 
+    .gallery-meta {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1;
+      color: #fff;
+      display: grid;
+      gap: 4px;
+    }
+
+    .gallery-meta .gallery-label {
+      position: static;
+      left: auto;
+      bottom: auto;
+      font-size: 1.2rem;
+      letter-spacing: -.02em;
+    }
+
+    .gallery-desc {
+      font-size: .78rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.78);
+    }
+
+
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -642,6 +669,109 @@ h3 { font-size: 1.45rem; line-height: 1.12; }
     }
 
     .footer-center a:hover::after { transform: scaleX(1); }
+
+
+    .category-grid .gallery-card {
+      min-height: 260px;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .story-card {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--gray-100);
+      border: 0;
+      padding: 0;
+      color: inherit;
+      text-align: left;
+      width: 100%;
+      transition: transform .25s var(--ease);
+    }
+
+    .story-card img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform .35s var(--ease), opacity .35s var(--ease);
+    }
+
+    .story-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.52), transparent 58%);
+      opacity: .95;
+    }
+
+    .story-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .story-card:hover img {
+      transform: scale(1.055);
+    }
+
+    .story-meta {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1;
+      color: #fff;
+      display: grid;
+      gap: 5px;
+    }
+
+    .story-title {
+      font-size: 1.2rem;
+      line-height: 1.15;
+      letter-spacing: -.02em;
+    }
+
+    .story-desc {
+      font-size: .78rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.78);
+    }
+
+    .gallery-back {
+      display: none;
+      margin: -6px 0 24px;
+      border: 1px solid var(--black);
+      background: transparent;
+      color: var(--black);
+      min-height: 42px;
+      padding: 0 16px;
+      cursor: pointer;
+      font-size: .84rem;
+      font-weight: 500;
+      transition: background .2s var(--ease), color .2s var(--ease), transform .2s var(--ease);
+    }
+
+    .gallery-back.active {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gallery-back:hover {
+      background: var(--black);
+      color: var(--white);
+      transform: translateY(-1px);
+    }
+
+    .popup-grid.is-hidden,
+    .story-grid.is-hidden {
+      display: none;
+    }
 
     .lightbox {
       position: fixed;
@@ -1021,22 +1151,37 @@ z-index: 2;
           </div>
         </div>
 
-        <div class="gallery-grid">
-          <button class="gallery-card" data-gallery="wedding" type="button">
+        <div class="gallery-grid category-grid">
+          <button class="gallery-card" data-category="svadby" type="button">
             <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=max&w=1100&q=85" alt="Svadby" loading="lazy" decoding="async">
-            <span class="gallery-label">Svadby</span>
+            <span class="gallery-meta">
+              <span class="gallery-label">Svadby</span>
+              <span class="gallery-desc">Príbehy svadobných dní</span>
+            </span>
           </button>
-          <button class="gallery-card" data-gallery="portrait" type="button">
+
+          <button class="gallery-card" data-category="portrety" type="button">
             <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=max&w=1100&q=85" alt="Portréty" loading="lazy" decoding="async">
-            <span class="gallery-label">Portréty</span>
+            <span class="gallery-meta">
+              <span class="gallery-label">Portréty</span>
+              <span class="gallery-desc">Jednotlivci, páry, rodiny</span>
+            </span>
           </button>
-          <button class="gallery-card" data-gallery="event" type="button">
+
+          <button class="gallery-card" data-category="eventy" type="button">
             <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=max&w=1100&q=85" alt="Eventy" loading="lazy" decoding="async">
-            <span class="gallery-label">Eventy</span>
+            <span class="gallery-meta">
+              <span class="gallery-label">Eventy</span>
+              <span class="gallery-desc">Reportáže z akcií</span>
+            </span>
           </button>
-          <button class="gallery-card" data-gallery="concert" type="button">
+
+          <button class="gallery-card" data-category="koncerty" type="button">
             <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=max&w=1100&q=85" alt="Koncerty" loading="lazy" decoding="async">
-            <span class="gallery-label">Koncerty</span>
+            <span class="gallery-meta">
+              <span class="gallery-label">Koncerty</span>
+              <span class="gallery-desc">Svetlá, energia, atmosféra</span>
+            </span>
           </button>
         </div>
       </div>
@@ -1136,12 +1281,16 @@ z-index: 2;
     <div class="container">
       <div class="lightbox-head">
         <div>
-          <div class="label">Výber fotografií</div>
+          <div class="label" id="lightboxLabel">Kategória</div>
           <h3 id="lightboxTitle">Galéria</h3>
-          <p id="lightboxSubtitle">12 fotografií z kategórie</p>
+          <p id="lightboxSubtitle">Vyberte konkrétny príbeh alebo akciu.</p>
         </div>
         <button class="close" id="closeLightbox" aria-label="Zavrieť">×</button>
       </div>
+
+      <button class="gallery-back" id="galleryBack" type="button">← Späť na príbehy</button>
+
+      <div class="story-grid" id="storyGrid"></div>
       <div class="popup-grid" id="popupGrid"></div>
     </div>
   </div>
@@ -1189,83 +1338,164 @@ z-index: 2;
       });
     });
 
-    const galleries = {
-      wedding: {
-        title: 'Svadobný deň',
-        subtitle: 'Emócie, svetlo a detaily jedného dňa.',
-        images: [
-          'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1529634597503-139d3726fed5?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1509610973147-232dfea52a97?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1525258946800-98cfd641d0de?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1525772764200-be829a350797?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=max&w=1100&q=85'
+    /*
+      DVOJÚROVŇOVÁ GALÉRIA
+      ----------------------------------------------------
+      1. Na hlavnej stránke sú len kategórie:
+         Svadby / Portréty / Eventy / Koncerty
+
+      2. Po kliknutí sa otvorí zoznam konkrétnych príbehov/akcií:
+         napr. Anna & Marek, Lucia, Firemný večer...
+
+      3. Až po kliknutí na konkrétny príbeh sa zobrazia fotky.
+
+      Ako pridať nový príbeh:
+      - nájdi kategóriu, napr. svadby
+      - do poľa stories pridaj nový objekt:
+        {
+          title: 'Anna & Marek',
+          meta: 'Svadba / 2025',
+          cover: 'link-na-cover-fotku.jpg',
+          subtitle: 'Krátky popis.',
+          images: ['foto1.jpg', 'foto2.jpg']
+        }
+    */
+    const galleryCategories = {
+      svadby: {
+        label: 'Svadby',
+        title: 'Svadobné príbehy',
+        subtitle: 'Vyberte konkrétny svadobný príbeh.',
+        stories: [
+          {
+            title: 'Anna & Marek',
+            meta: 'Svadba / 2025',
+            cover: 'https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=max&w=1100&q=85',
+            subtitle: 'Svadobný deň plný svetla, pohybu a skutočných emócií.',
+            images: [
+              'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1529634597503-139d3726fed5?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=max&w=1100&q=85'
+            ]
+          },
+          {
+            title: 'Jana & Martin',
+            meta: 'Svadba / kaštieľ',
+            cover: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=max&w=1100&q=85',
+            subtitle: 'Elegantná svadba s pokojnou atmosférou a množstvom detailov.',
+            images: [
+              'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1525258946800-98cfd641d0de?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1525772764200-be829a350797?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=max&w=1100&q=85'
+            ]
+          }
         ]
       },
-      portrait: {
-        title: 'Portréty',
-        subtitle: 'Prirodzenosť, charakter a pokojná atmosféra.',
-        images: [
-          'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1521119989659-a83eee488004?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=max&w=1100&q=85'
+
+      portrety: {
+        label: 'Portréty',
+        title: 'Portrétne fotenia',
+        subtitle: 'Vyberte konkrétne portrétne fotenie.',
+        stories: [
+          {
+            title: 'Lucia',
+            meta: 'Portrét / exteriér',
+            cover: 'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=max&w=1100&q=85',
+            subtitle: 'Pokojné portrétne fotenie v prirodzenom svetle.',
+            images: [
+              'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=max&w=1100&q=85'
+            ]
+          },
+          {
+            title: 'Peter',
+            meta: 'Portrét / mesto',
+            cover: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=max&w=1100&q=85',
+            subtitle: 'Jednoduchý mestský portrét s dôrazom na charakter.',
+            images: [
+              'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=max&w=1100&q=85'
+            ]
+          }
         ]
       },
-      event: {
-        title: 'Eventy',
-        subtitle: 'Reportážne zachytenie atmosféry podujatia.',
-        images: [
-          'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1515169067865-5387ec356754?auto=format&fit=max&w=1100&q=85'
+
+      eventy: {
+        label: 'Eventy',
+        title: 'Eventy a akcie',
+        subtitle: 'Vyberte konkrétnu akciu.',
+        stories: [
+          {
+            title: 'Firemný večer',
+            meta: 'Event / reportáž',
+            cover: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=max&w=1100&q=85',
+            subtitle: 'Reportážne zachytenie atmosféry, detailov a ľudí počas večera.',
+            images: [
+              'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=max&w=1100&q=85'
+            ]
+          },
+          {
+            title: 'Oslava narodenín',
+            meta: 'Oslava / rodina',
+            cover: 'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=max&w=1100&q=85',
+            subtitle: 'Menšia oslava zachytená prirodzene a nenápadne.',
+            images: [
+              'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1515169067865-5387ec356754?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=max&w=1100&q=85'
+            ]
+          }
         ]
       },
-      concert: {
-        title: 'Koncerty',
-        subtitle: 'Svetlá, energia a atmosféra živých vystúpení.',
-        images: [
-          'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1501612780327-45045538702b?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1487180144351-b8472da7d491?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=max&w=1100&q=85',
-          'https://images.unsplash.com/photo-1507901747481-84a4f64fda6d?auto=format&fit=max&w=1100&q=85'
+
+      koncerty: {
+        label: 'Koncerty',
+        title: 'Koncertné príbehy',
+        subtitle: 'Vyberte konkrétny koncert.',
+        stories: [
+          {
+            title: 'Letný koncert',
+            meta: 'Koncert / festival',
+            cover: 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=max&w=1100&q=85',
+            subtitle: 'Svetlá, energia a atmosféra živého vystúpenia.',
+            images: [
+              'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=max&w=1100&q=85'
+            ]
+          },
+          {
+            title: 'Klubový večer',
+            meta: 'Koncert / klub',
+            cover: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=max&w=1100&q=85',
+            subtitle: 'Tmavšia klubová atmosféra, pohyb a svetlá.',
+            images: [
+              'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1501612780327-45045538702b?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=max&w=1100&q=85',
+              'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=max&w=1100&q=85'
+            ]
+          }
         ]
       }
     };
 
     const lightbox = document.querySelector('#lightbox');
     const popupGrid = document.querySelector('#popupGrid');
+    const storyGrid = document.querySelector('#storyGrid');
+    const galleryBack = document.querySelector('#galleryBack');
+    const lightboxLabel = document.querySelector('#lightboxLabel');
     const lightboxTitle = document.querySelector('#lightboxTitle');
     const lightboxSubtitle = document.querySelector('#lightboxSubtitle');
     const closeLightbox = document.querySelector('#closeLightbox');
@@ -1282,17 +1512,82 @@ z-index: 2;
       return src.split('?')[0] + '?auto=format&fit=max&w=1800&q=90';
     }
 
-    function openGallery(key) {
-      const gallery = galleries[key];
-      if (!gallery) return;
-      lightboxTitle.textContent = gallery.title;
-      lightboxSubtitle.textContent = gallery.subtitle;
-      currentGalleryImages = gallery.images.map(fullSizeImage);
-      currentPhotoIndex = 0;
-      popupGrid.innerHTML = gallery.images.map((src, i) => `<img src="${src}" data-index="${i}" data-full="${fullSizeImage(src)}" alt="${gallery.title} ${i + 1}" loading="lazy" decoding="async">`).join('');
+    let currentCategoryKey = '';
+    let currentStory = null;
+
+    function openCategory(key) {
+      const category = galleryCategories[key];
+      if (!category) return;
+
+      currentCategoryKey = key;
+      currentStory = null;
+
+      lightboxLabel.textContent = category.label;
+      lightboxTitle.textContent = category.title;
+      lightboxSubtitle.textContent = category.subtitle;
+
+      galleryBack.classList.remove('active');
+      popupGrid.classList.add('is-hidden');
+      storyGrid.classList.remove('is-hidden');
+
+      storyGrid.innerHTML = category.stories.map((story, index) => `
+        <button class="story-card" data-story-index="${index}" type="button">
+          <img src="${story.cover}" alt="${story.title}" loading="lazy" decoding="async">
+          <span class="story-meta">
+            <span class="story-title">${story.title}</span>
+            <span class="story-desc">${story.meta}</span>
+          </span>
+        </button>
+      `).join('');
+
+      popupGrid.innerHTML = '';
+
       lightbox.classList.add('active');
       lightbox.setAttribute('aria-hidden', 'false');
       document.body.classList.add('no-scroll');
+    }
+
+    function openStory(index = 0) {
+      const category = galleryCategories[currentCategoryKey];
+      if (!category) return;
+
+      const story = category.stories[Number(index)];
+      if (!story) return;
+
+      currentStory = story;
+      currentGalleryImages = story.images.map(fullSizeImage);
+      currentPhotoIndex = 0;
+
+      lightboxLabel.textContent = category.label;
+      lightboxTitle.textContent = story.title;
+      lightboxSubtitle.textContent = story.subtitle || story.meta;
+
+      galleryBack.classList.add('active');
+      storyGrid.classList.add('is-hidden');
+      popupGrid.classList.remove('is-hidden');
+
+      popupGrid.innerHTML = story.images.map((src, i) => `
+        <img src="${src}" data-index="${i}" data-full="${fullSizeImage(src)}" alt="${story.title} ${i + 1}" loading="lazy" decoding="async">
+      `).join('');
+    }
+
+    function backToStories() {
+      if (!currentCategoryKey) return;
+      const category = galleryCategories[currentCategoryKey];
+
+      currentStory = null;
+      currentGalleryImages = [];
+      currentPhotoIndex = 0;
+
+      lightboxLabel.textContent = category.label;
+      lightboxTitle.textContent = category.title;
+      lightboxSubtitle.textContent = category.subtitle;
+
+      galleryBack.classList.remove('active');
+      popupGrid.classList.add('is-hidden');
+      storyGrid.classList.remove('is-hidden');
+      popupGrid.innerHTML = '';
+      closeFullPhoto();
     }
 
     function closeGallery() {
@@ -1300,6 +1595,11 @@ z-index: 2;
       lightbox.setAttribute('aria-hidden', 'true');
       closeFullPhoto();
       document.body.classList.remove('no-scroll');
+      currentCategoryKey = '';
+      currentStory = null;
+      currentGalleryImages = [];
+      storyGrid.innerHTML = '';
+      popupGrid.innerHTML = '';
     }
 
     function updatePhotoViewer() {
@@ -1328,9 +1628,17 @@ z-index: 2;
       photoViewerImage.removeAttribute('src');
     }
 
-    document.querySelectorAll('[data-gallery]').forEach(item => {
-      item.addEventListener('click', () => openGallery(item.dataset.gallery));
+    document.querySelectorAll('[data-category]').forEach(item => {
+      item.addEventListener('click', () => openCategory(item.dataset.category));
     });
+
+    storyGrid.addEventListener('click', e => {
+      const card = e.target.closest('[data-story-index]');
+      if (!card) return;
+      openStory(card.dataset.storyIndex);
+    });
+
+    galleryBack.addEventListener('click', backToStories);
     closeLightbox.addEventListener('click', closeGallery);
     popupGrid.addEventListener('click', e => {
       const image = e.target.closest('img');
