@@ -1,0 +1,82 @@
+{
+  "svadby": {
+    "label": "Svadby",
+    "title": "Svadobné príbehy",
+    "subtitle": "Vyberte konkrétny svadobný príbeh.",
+    "description": "Príbehy svadobných dní",
+    "cover": "galeria/Svadby/Anna a Marek/cover.jpg",
+    "stories": [
+      {
+        "title": "Anna & Marek",
+        "meta": "Svadba / 2025",
+        "cover": "galeria/Svadby/Anna a Marek/cover.jpg",
+        "subtitle": "Svadobný deň plný svetla, pohybu a skutočných emócií.",
+        "images": [
+          "galeria/Svadby/Anna a Marek/01.jpg",
+          "galeria/Svadby/Anna a Marek/02.jpg",
+          "galeria/Svadby/Anna a Marek/03.jpg"
+        ]
+      }
+    ]
+  },
+  "portrety": {
+    "label": "Portréty",
+    "title": "Portrétne fotenia",
+    "subtitle": "Vyberte konkrétne portrétne fotenie.",
+    "description": "Jednotlivci, páry, rodiny",
+    "cover": "galeria/Portrety/Lucia/cover.jpg",
+    "stories": [
+      {
+        "title": "Lucia",
+        "meta": "Portrét / exteriér",
+        "cover": "galeria/Portrety/Lucia/cover.jpg",
+        "subtitle": "Pokojné portrétne fotenie v prirodzenom svetle.",
+        "images": [
+          "galeria/Portrety/Lucia/01.jpg",
+          "galeria/Portrety/Lucia/02.jpg",
+          "galeria/Portrety/Lucia/03.jpg"
+        ]
+      }
+    ]
+  },
+  "eventy": {
+    "label": "Eventy",
+    "title": "Eventy a akcie",
+    "subtitle": "Vyberte konkrétnu akciu.",
+    "description": "Reportáže z akcií",
+    "cover": "galeria/Eventy/Firemny vecer/cover.jpg",
+    "stories": [
+      {
+        "title": "Firemný večer",
+        "meta": "Event / reportáž",
+        "cover": "galeria/Eventy/Firemny vecer/cover.jpg",
+        "subtitle": "Reportážne zachytenie atmosféry, detailov a ľudí počas večera.",
+        "images": [
+          "galeria/Eventy/Firemny vecer/01.jpg",
+          "galeria/Eventy/Firemny vecer/02.jpg",
+          "galeria/Eventy/Firemny vecer/03.jpg"
+        ]
+      }
+    ]
+  },
+  "koncerty": {
+    "label": "Koncerty",
+    "title": "Koncertné príbehy",
+    "subtitle": "Vyberte konkrétny koncert.",
+    "description": "Svetlá, energia, atmosféra",
+    "cover": "galeria/Koncerty/Letny koncert/cover.jpg",
+    "stories": [
+      {
+        "title": "Letný koncert",
+        "meta": "Koncert / festival",
+        "cover": "galeria/Koncerty/Letny koncert/cover.jpg",
+        "subtitle": "Svetlá, energia a atmosféra živého vystúpenia.",
+        "images": [
+          "galeria/Koncerty/Letny koncert/01.jpg",
+          "galeria/Koncerty/Letny koncert/02.jpg",
+          "galeria/Koncerty/Letny koncert/03.jpg"
+        ]
+      }
+    ]
+  }
+}
