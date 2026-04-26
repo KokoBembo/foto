@@ -843,10 +843,14 @@ h3 { font-size: 1.45rem; line-height: 1.12; }
       inset: 0;
       z-index: 999;
       display: none;
+      height: 100vh;
+      height: 100dvh;
       background: rgba(255,255,255,.96);
-      -webkit-
-      
-      overflow-y: auto;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+      touch-action: pan-y;
       padding: 30px 0 70px;
     }
     .lightbox.active { display: block; }
@@ -1184,6 +1188,32 @@ z-index: 2;
     
 
 
+
+     (max-width: 720px) {
+      .lightbox {
+        height: 100vh;
+        height: 100dvh;
+        max-height: 100dvh;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        padding: 22px 0 90px;
+      }
+
+      .lightbox .container {
+        min-height: auto;
+      }
+
+      .lightbox-head {
+        position: relative;
+        z-index: 1;
+      }
+
+      .story-grid,
+      .popup-grid {
+        touch-action: pan-y;
+      }
+    }
+  
     /* Blur strip at bottom of gallery cards */
                         .gallery-card::before,
     .story-card::before {
