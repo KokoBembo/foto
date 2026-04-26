@@ -853,7 +853,16 @@ h3 { font-size: 1.45rem; line-height: 1.12; }
       touch-action: pan-y;
       padding: 30px 0 70px;
     }
-    .lightbox.active { display: block; }
+    .lightbox.active { display: block; overflow-y: auto; }
+
+    .lightbox > .container {
+      min-height: 100%;
+    }
+
+    .lightbox .popup-grid,
+    .lightbox .story-grid {
+      overflow: visible;
+    }
     .lightbox-head {
       display: flex;
       justify-content: space-between;
@@ -1189,14 +1198,18 @@ z-index: 2;
 
 
 
-     (max-width: 720px) {
+    @media (max-width: 720px) {
       .lightbox {
+        position: fixed;
+        inset: 0;
         height: 100vh;
-        height: 100dvh;
-        max-height: 100dvh;
-        overflow-y: scroll;
+        height: 100svh;
+        max-height: none;
+        overflow-x: hidden;
+        overflow-y: auto;
         -webkit-overflow-scrolling: touch;
-        padding: 22px 0 90px;
+        overscroll-behavior-y: contain;
+        padding: 22px 0 110px;
       }
 
       .lightbox .container {
@@ -1750,7 +1763,6 @@ header.scrolled::after {
 
       lightbox.classList.add('active');
       lightbox.setAttribute('aria-hidden', 'false');
-      document.body.classList.add('no-scroll');
     }
 
     function openStory(index = 0) {
@@ -1832,6 +1844,11 @@ header.scrolled::after {
       photoViewer.classList.remove('active');
       photoViewer.setAttribute('aria-hidden', 'true');
       photoViewerImage.removeAttribute('src');
+
+      // Foto viewer zamyká body, ale po zatvorení fotky musí zostať popup galéria na mobile scrollovateľná.
+      if (!navLinks.classList.contains('active')) {
+        document.body.classList.remove('no-scroll');
+      }
     }
 
     document.querySelectorAll('[data-category]').forEach(item => {
